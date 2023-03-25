@@ -33,6 +33,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.spl
 LOCAL_APPS = [
     'apps.common.apps.CommonConfig',
     'apps.accounts.apps.AccountsConfig',
+    'apps.profiles.apps.ProfilesConfig',
 ]
 
 INSTALLED_APPS = [

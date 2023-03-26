@@ -45,6 +45,8 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     username = models.CharField(
         max_length=32,
+        blank=True,
+        null=True,
         unique=True,
         validators=[username_validator, MinLengthValidator(3)],
     )
@@ -53,7 +55,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=32, blank=True)
     bio = models.CharField(max_length=256, blank=True)
     image = models.ImageField(verbose_name="profile image", upload_to=rename_profile_image,
-                              default='default_profile_image.png')
+                              default='profile_images/default/default_profile_image.png')
 
     def __str__(self):
         return self.user.email

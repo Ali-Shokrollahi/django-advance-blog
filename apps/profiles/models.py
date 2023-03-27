@@ -26,11 +26,11 @@ def rename_profile_image(instance, filename):
 
     # Create the directory if it doesn't already exist
     if not default_storage.exists(user_dir):
-        default_storage.makedirs(user_dir)
+        os.mkdir(os.path.join(default_storage.location, user_dir))
 
     # Generate a unique file name based on the random string, the user's email address or unique identifier,
     # and the file extension
-    new_file_name = f"{random_string}{ext}"
+    new_file_name = f"{random_string}.{ext}"
 
     # Return the new file path relative to the media root
     return os.path.join(user_dir, new_file_name)

@@ -37,6 +37,11 @@ LOCAL_APPS = [
     'apps.blog.apps.BlogConfig',
 ]
 
+THIRD_PARTY_APPS = [
+    'ckeditor',
+    'ckeditor_uploader',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    *THIRD_PARTY_APPS,
     *LOCAL_APPS,
 ]
 
@@ -135,3 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # User model
 AUTH_USER_MODEL = 'accounts.User'
+
+
+# CKEDITOR
+CKEDITOR_UPLOAD_PATH = "post_contents/"

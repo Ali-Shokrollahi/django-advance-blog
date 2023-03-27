@@ -34,6 +34,7 @@ LOCAL_APPS = [
     'apps.common.apps.CommonConfig',
     'apps.accounts.apps.AccountsConfig',
     'apps.profiles.apps.ProfilesConfig',
+    'apps.blog.apps.BlogConfig',
 ]
 
 INSTALLED_APPS = [
